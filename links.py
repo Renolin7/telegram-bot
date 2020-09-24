@@ -82,7 +82,7 @@ def wt():
     return('Today is an offline class')
   elif day=='Thu' or day=='Fri' :
     temp[5]='https://meet.google.com/epe-wnhb-sra'
-    return[temp[5]]
+    return(temp[5])
   elif day=='Sat' and c[0]=='1' and (c[1]=='1' or c[1]=='2'):
     temp[5]='https://meet.google.com/qmz-msrn-aoh'
     return(temp[5])
