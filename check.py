@@ -2,9 +2,9 @@
 from Time import *
 from links import *
 sp='__________________________________'
-
+y=[]
 def check():
-  y[] = day()
+  y = day()
   t = gettime()
   if y=='0' or c[0]=='0':
     return('Today is a holiday !')
