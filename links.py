@@ -28,7 +28,7 @@ def toc():
   elif time>'17:30:00' and time<='23:59:59':
     temp[1]=const
     return('Todays classes are over !')
-  elif day=='Fri' or c[1]=='5' :
+  elif day=='Fri' or ( c[1]=='5' and c[0]=='1' ):
     return('Today is an offline class !')
   else:
     return(temp[1])
@@ -40,7 +40,7 @@ def cg():
   elif time>'17:30:00' and time<='23:59:59':
     temp[2]=const
     return('Todays classes are over !')
-  elif day=='Thu' or c[1]=='4' :
+  elif day=='Thu' or ( c[1]=='4' and c[0]=='1'):
     return('Today is an offline class')
   else:
     return(temp[2])
@@ -52,7 +52,7 @@ def cn():
   elif time>'17:30:00' and time<='23:59:59':
     temp[3]=const
     return('Todays classes are over !')
-  elif day=='Mon' or c[1]=='1' :
+  elif day=='Mon' or ( c[1]=='1' and c[0]=='1') :
     return('Today is an offline class')
   else:
     return(temp[3])
@@ -64,7 +64,7 @@ def mp():
   elif time>='17:30:00' and time<='23:59:59':
     temp[4]=const
     return('Todays classes are over !')
-  elif day=='Fri' or c[1]=='5' :
+  elif day=='Fri' or ( c[1]=='5' and c[0]=='1'):
     return('Today no class for Microprocessor')
   else:
     return(temp[4])
@@ -102,7 +102,7 @@ def mad():
   elif time>'17:30:00' and time<='23:59:59':
     temp[6]=const
     return('Todays classes are over !')
-  elif day=='Tue' or c[1]=='2' :
+  elif day=='Tue' or ( c[1]=='2' and c[0]=='1'):
     return('Today is an offline class')
   else:
     return(temp[6])
@@ -114,7 +114,7 @@ def cnlab():
   elif time>'17:30:00' and time<='23:59:59':
     temp[8]=const
     return('Todays classes are over !')
-  elif day=='Tue' or c[1] =='2':
+  elif day=='Tue' or ( c[1] =='2' and c[0]=='1'):
     return(temp[8])
   else:
     temp[8]=const
@@ -127,7 +127,7 @@ def cglab():
   elif time>'17:30:00' and time<='23:59:59' :
     temp[7]=const
     return('Todays classes are over !')
-  elif day== 'Mon' or c[1]=='1':
+  elif day== 'Mon' or (c[1]=='1' and c[0]=='1'):
     return(temp[7])
   else:
     temp[7]=const
@@ -140,7 +140,7 @@ def mplab():
   elif time>'17:30:00' and time<='23:59:59' :
     temp[9]=const
     return('Todays classes are over !')
-  elif day=='Wed' or c[1]=='3':
+  elif day=='Wed' or ( c[1]=='3' and c[0]=='1'):
     return(temp[9])
   else:
     temp[9]=const
@@ -153,7 +153,7 @@ def it():
   elif time>'17:30:00' and time<='23:59:59':
     temp[10]=const
     return('Todays classes are over !')
-  elif day=='Thu' or c[1]=='4':
+  elif day=='Thu' or ( c[1]=='4' and c[0]=='1'):
     return(temp[10])
   else:
     temp[10]=const
@@ -166,7 +166,7 @@ def pt():
   elif time>'17:30:00' and time<'23:59:59':
     temp[11]=const
     return('Todays classes are over !')
-  elif day == 'Fri' or c[1]=='5':
+  elif day == 'Fri' or ( c[1]=='5' and c[0]=='1'):
     return(temp[11])
   else:
     temp[11]=const
