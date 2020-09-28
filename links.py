@@ -11,7 +11,7 @@ def change(li,n):
 def changesat(h,j):
   day=d()
   time=gettime()
-  if j=='1' or j=='2' or j=='3' or j=='4' or j=='5' or j=='x' and (h=='1' or h=='0' or h=='x') and day=='Sat':
+  if j=='1' or j=='2' or j=='3' or j=='4' or j=='5' or j=='x' and (h=='1' or h=='0' or h=='x'):
     c[0]=h
     c[1]=j
     mess='Saturdays time table updated.'
