@@ -1,7 +1,7 @@
 
 from Time import *
 from links import *
-sp="_________________________________"
+sp="____________________________"
 
 def check():
   y = day()
@@ -12,25 +12,23 @@ def check():
   elif t>='09:00:00' and t<'10:00:00' :
     return('Now :-'+y[0])
   elif t>='10:00:00' and t<'11:00:00' :
-    return('Now :-'+y[1])
+    return('Now :-\n'+y[1])
   elif t>='11:00:00' and t<'11:30:00' :
-    return('Now :-'+y[2])
+    return('Now :-\n'+y[2])
   elif t>='11:30:00' and t<'12:30:00' :
-    return('Now :-'+y[3])
+    return('Now :-\n'+y[3])
   elif t>='12:30:00' and t<'13:30:00' :
-    return('Now :-'+y[4])
+    return('Now :-\n'+y[4])
   elif t>='13:30:00' and t<'14:30:00' :
-    return('Now :-'+y[5])
+    return('Now :-\n'+y[5])
   elif t>='14:30:00' and t<'15:30:00' :
-    return('Now :-'+y[6])
+    return('Now :-\n'+y[6])
   elif t>='15:30:00' and t<'16:30:00' :
-    return('Now :-'+y[7])
+    return('Now :-\n'+y[7])
   elif t>='16:30:00' and t<'17:30:00' :
-    return('Now :-'+y[8])
+    return('Now :-\n'+y[8])
   else:
     return('Now there is no class scheduled !')
-#def link():
-
 def nextcl():
   y = day()
   #z = link()
@@ -40,31 +38,31 @@ def nextcl():
   elif t>='00:00:00' and t<'09:00:00':
     return('Next ->'+y[0])
   elif t>='09:00:00' and t<'10:00:00' :
-    return('Next ->'+y[1])
+    return('Next ->\n'+y[1])
   elif t>='10:00:00' and t<'11:00:00' :
-    return('Next ->'+y[2])
+    return('Next ->\n'+y[2])
   elif t>='11:00:00' and t<'11:30:00' :
-    return('Next ->'+y[3])
+    return('Next ->\n'+y[3])
   elif t>='11:30:00' and t<'12:30:00' :
-    return('Next ->'+y[4])
+    return('Next ->\n'+y[4])
   elif t>='12:30:00' and t<'13:30:00' :
-    return('Next ->'+y[5])
+    return('Next ->\n'+y[5])
   elif t>='13:30:00' and t<'14:30:00' :
-    return('Next ->'+y[6])
+    return('Next ->\n'+y[6])
   elif t>='14:30:00' and t<'15:30:00' :
-    return('Now :-'+y[7])
+    return('Next ->\n'+y[7])
 
-  elif t>='15:30:00' and t<'16:30:00' and d=='Fri' :
+  elif t>='15:30:00' and t<'16:30:00' and ( d=='Fri'or (c[0]=='1' and c[1]=='5') ):
     return('No classes scheduled next !')
   elif t>='15:30:00' and t<'16:30:00' :
-    return('Next ->'+y[8])
+    return('Next ->\n'+y[8])
   else:
     return('No classes scheduled next !')
 
 def day():
   mon = ["\n\nTheory of computation\n\n"+toc()+"\n"+sp,"\nComputer graphics and multimedia\n\n"+cg()+"\n"+sp,"\nBREAK\n"+sp,"\nWeb technology\n\n"+wt()+"\n"+sp,"\n(Offline) Computer networks\n\n"+sp,"\nBREAK\n"+sp,"\nMobile app development\n\n"+mad()+"\n"+sp,"\nMicroprocessor\n\n"+mp()+"\n"+sp,"\nComputer graphics and multimedia  LAB\n\n"+cglab()+"\n\n"]
   tue = ["\n\nComputer graphics and multimedia\n\n"+cg()+"\n"+sp,"\nComputer networks\n\n"+cn()+"\n"+sp,"\nBREAK\n"+sp,"\nTheory of computation\n\n"+toc()+"\n"+sp,"\n(Offline) Mobile app development\n\n"+sp,"\nBREAK\n"+sp,"\nMicroprocessor\n\n"+mp()+"\n"+sp,"\nWeb technology\n\n"+wt()+"\n"+sp,"\nComputer networks LAB\n\n"+cnlab()+"\n\n"]
-  wed = ["\n\nComputer networks\n\n"+cn()+"\n"+sp,"\nMobile app development\n\n"+mad()+"\n"+sp,"\nBREAK\n"+sp,"\nMicroprocessor\n\n"+mp()+"\n"+sp,"\n(Offline) Web technology\n\n"+sp,"\nBREAK\n","\nComputer graphics and multimedia\n\n"+cg()+"\n"+sp,"\nTheory of computation\n\n"+toc()+"\n"+sp,"\nMicroprocessor LAB\n\n"+mplab()+"\n\n"]
+  wed = ["\n\nComputer networks\n\n"+cn()+"\n"+sp,"\nMobile app development\n\n"+mad()+"\n"+sp,"\nBREAK\n"+sp,"\nMicroprocessor\n\n"+mp()+"\n"+sp,"\n(Offline) Web technology\n\n"+sp,"\nBREAK\n"+sp,"\nComputer graphics and multimedia\n\n"+cg()+"\n"+sp,"\nTheory of computation\n\n"+toc()+"\n"+sp,"\nMicroprocessor LAB\n\n"+mplab()+"\n\n"]
   thu = ["\n\nMicroprocessor\n"+mp()+"\n"+sp,"\nWeb technology\n\n"+wt()+"\n"+sp,"\nBREAK\n"+sp,"\nMobile app development\n\n"+mad()+"\n"+sp,"\n(Offline) Computer graphics and multimedia\n\n"+sp,"\nBREAK\n"+sp,"\nTheory of computation\n\n/toc"+toc()+"\n"+sp,"\nComputer networks\n\n"+cn()+"\n"+sp,"\nIndustrial training\n\n"+it()+"\n\n"]
   fri = ["\n\nWeb technology\n\n"+wt()+"\n"+sp,"\nMobile app development\n\n"+mad()+"\n"+sp,"\nBREAK\n"+sp,"\nComputer networks\n\n"+cn()+"\n"+sp,"\n(Offline) Theory of computation\n\n"+sp,"\nBREAK\n"+sp,"\nComputer graphics and multimedia\n\n"+cg()+"\n"+sp,"\nPlacement and training\n\n"+pt()+"\n"+sp,"\nPlacement and training\n\n"+pt()+"\n\n"]
   sat=' '
