@@ -3,8 +3,6 @@ import requests
 import datetime
 from check import *
 from links import *
-#from test import *
-#wel= 'hey'
 
 class BotHandler:
     def __init__(self, token):
@@ -39,16 +37,9 @@ class BotHandler:
 token = environ['token']
 niloner_bot = BotHandler(token)
 ID= [750862502,817947468]
-#def change(x,n,ar):
-  #ar[n]=x
-  
-  
-#def getbbb(n):
-  #return(bbb[1])
-#bbb=['  ','   ','   ']
 def main():
     new_offset = 0
-    print('hi, now launching...')
+    print('Launching the bot...')
 
     while True:
         all_updates=niloner_bot.get_updates(new_offset)
@@ -78,19 +69,7 @@ def main():
                   niloner_bot.send_message(first_chat_id, 'Hi '  + first_chat_name)
                   new_offset = first_update_id + 1
                   break
-                #elif 'Hi' in first_chat_text:
-                  #wel='Mm'
-                  #Renolin_bot.send_message(first_chat_id, wel+ first_chat_name)
-                  #new_offset = first_update_id + 1
-                 
                 
-                  
-              #  if first_chat_text=='/test':
-                  #Renolin_bot.send_message(first_chat_id, 'test link is \n'+getbbb(1))
-                  #new_offset = first_update_id + 1
-                #if first_chat_text == 'New member':
-                  #  Renolin_bot.send_message(first_chat_id, 'Hi '  + first_chat_name+'\nHow can help you.')
-                   # new_offset = first_update_id + 1
                 if first_chat_text == '/start':
                   niloner_bot.send_message(first_chat_id, 'Hi '  + first_chat_name +'\n Type /list for list of notes')
                   new_offset = first_update_id + 1
