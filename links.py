@@ -4,7 +4,7 @@ from Time import *
 temp=['Link not updated !','toc','cg','cn','mp','wt','mad','cgl','cnl','mpl','it','pt']
 const='Link not updated !'
 
-c=['1','2']
+c=['x','x']
 
 def change(li,n):
   temp[n]=li
