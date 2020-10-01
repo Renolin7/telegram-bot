@@ -1,9 +1,8 @@
 from Time import *
 
 
-temp=['Link not updated !','toc','cg','cn','mp','wt','mad','cgl','cnl','mpl','it','pt']
+temp=['Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !']
 const='Link not updated !'
-
 c=['x','x']
 
 def change(li,n):
