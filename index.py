@@ -3,7 +3,8 @@ import requests
 import datetime
 from check import *
 from links import *
-
+import random
+ani=['CAACAgUAAxkBAAIGC192tgcAAYx9rNj9oluH0EaiUfTQmAACggEAAugVJyLWkLvD3xo6OBsE','CAACAgIAAxkBAAIGDV92tiyxNHjGdmL2nRMR7iPTVZBNAAJHAwACtXHaBjV7c9kAAYsdpBsE','CAACAgEAAxkBAAIGD192tknJG2aYoMyIp6z8TB9MQxRAAAJICgACv4yQBHUk1z4LX5nUGwQ','CAACAgIAAxkBAAIGEV92tmiajEMIuUrSpAoUGB1WSeF9AAKBAAPBnGAM6PbLODBd3jcbBA','CAACAgIAAxkBAAIGE192tpHLj8uDtrdFr7vN2WflsDVlAAJ-AAOWn4wOcYMRnixctuUbBA','CAACAgIAAxkBAAIGFV92trKOjqUs6r8ewX1nZE26yoLUAAJhAAMK_MIFpvt8LfVaOa4bBA','CAACAgEAAxkBAAIGF192ttsoH2v0oHXdUqdggeDYVtT2AAJgCgACv4yQBLW3hUMCnp-QGwQ','CAACAgIAAxkBAAIGGV92tzS4WyxEdXzlDcKtabFy7xZjAAJUAwACtXHaBkKqUvDfaej1GwQ','CAACAgIAAxkBAAIGG192t2ywB6YRujxfhpj2yg2vBuErAAJnAAOvxlEayZCJx70BigIbBA','CAACAgIAAxkBAAIGHV92uMwDmIaA45NiLAhx1_oucQWnAAIeAANZu_wlsg0_9KjFvagbBA','CAACAgIAAxkBAAIGH192uSsdPrTFfm0ShdtUQnJ3_RvRAAIvAAP7g6klITd39eao4jYbBA','CAACAgIAAxkBAAIGIV92uUFn1Du_4zewI0HmD7M-vW1eAAI4AAP7g6klOy_Bp3Iw890bBA','CAACAgIAAxkBAAIGI192uaHX5J51qhtdMXrtxBXEXYRpAAKtAwAC8n6CDGSNpbcqwW--GwQ']
 class BotHandler:
     def __init__(self, token):
             self.token = token
@@ -23,9 +24,16 @@ class BotHandler:
         resp = requests.post(self.api_url + method, params)
         return resp
     def send_photo(self, chat_id, text) :
+        t_day=
         params = {'chat_id': chat_id, 'photo': text, 'parse_mode': 'HTML'}
         method = 'sendPhoto'
         resp = requests.post(self.api_url + method, params)
+        if c[0]=='0' or t_day=='Sun':
+                u=random.randint(0,12)
+                par={'chat_id': chat_id, 'animation': ani[u], 'parse_mode': 'HTML'}
+                meth='sendAnimation'
+                res = requests.post(self.api_url + meth, par)
+                return Res,resp
         return resp
 
 
