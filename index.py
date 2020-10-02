@@ -28,11 +28,10 @@ class BotHandler:
         params = {'chat_id': chat_id, 'text': text, 'parse_mode': 'HTML'}
         method = 'sendMessage'
         resp = requests.post(self.api_url + method, params)
-        if (c[0]=='0' or t_day=='Sun') and 'holiday' in text:
-                
+        if (c[0]=='0' or t_day=='Sun') and 'holiday' in text :
                 return res, resp
         else :
-            return resp
+             return resp
     def send_photo(self, chat_id, text) :
         params = {'chat_id': chat_id, 'photo': text, 'parse_mode': 'HTML'}
         method = 'sendPhoto'
