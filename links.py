@@ -5,7 +5,8 @@ temp=['Link not updated !','Link not updated !','Link not updated !','Link not u
 const='Link not updated !'
 c=['x','x']
 def c():
-   return c[0]
+   temp=c[0]
+   return temp
 def change(li,n):
   temp[n]=li
 def changesat(h,j):
