@@ -1,4 +1,5 @@
 from os import environ
+from Time import *
 import requests
 import datetime
 from check import *
@@ -19,21 +20,21 @@ class BotHandler:
         return result_json
 
     def send_message(self, chat_id, text):
+        t_day=d()
         params = {'chat_id': chat_id, 'text': text, 'parse_mode': 'HTML'}
         method = 'sendMessage'
-        resp = requests.post(self.api_url + method, params)
-        return resp
-    def send_photo(self, chat_id, text) :
-        t_day=
-        params = {'chat_id': chat_id, 'photo': text, 'parse_mode': 'HTML'}
-        method = 'sendPhoto'
         resp = requests.post(self.api_url + method, params)
         if c[0]=='0' or t_day=='Sun':
                 u=random.randint(0,12)
                 par={'chat_id': chat_id, 'animation': ani[u], 'parse_mode': 'HTML'}
                 meth='sendAnimation'
                 res = requests.post(self.api_url + meth, par)
-                return Res,resp
+                return res,resp
+        return resp
+    def send_photo(self, chat_id, text) :
+        params = {'chat_id': chat_id, 'photo': text, 'parse_mode': 'HTML'}
+        method = 'sendPhoto'
+        resp = requests.post(self.api_url + method, params)
         return resp
 
 
