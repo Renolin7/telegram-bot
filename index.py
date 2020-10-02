@@ -30,7 +30,6 @@ class BotHandler:
         resp = requests.post(self.api_url + method, params)
         if c[0]=='0' or t_day=='Sun' :  
                 return res, resp
-                break
         return resp
     def send_photo(self, chat_id, text) :
         params = {'chat_id': chat_id, 'photo': text, 'parse_mode': 'HTML'}
