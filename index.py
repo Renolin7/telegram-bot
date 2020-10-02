@@ -21,7 +21,7 @@ class BotHandler:
     
     def send_message(self, chat_id,text):
         t_day=d()
-        print (t_dat)
+        print (t_day)
         cm=c()
         u=random.randint(0,12)
         if cm=='0' or t_day=='Sun' :  
