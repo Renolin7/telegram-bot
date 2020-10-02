@@ -22,6 +22,12 @@ class BotHandler:
         method = 'sendMessage'
         resp = requests.post(self.api_url + method, params)
         return resp
+    def send_photo(self, chat_id, text) :
+        params = {'chat_id': chat_id, 'photo': text, 'parse_mode': 'HTML'}
+        method = 'sendPhoto'
+        resp = requests.post(self.api_url + method, params)
+        return resp
+
 
     def get_first_update(self):
         get_result = self.get_updates()
@@ -213,7 +219,9 @@ def main():
                                         change(h,11)
                                         niloner_bot.send_message(first_chat_id, 'Placement and training link updated\n'+temp[11])
                                         new_offset = first_update_id + 1
-                                                        
+                  if first_chat_text == '/ftt' :
+                                flag=0  
+                                niloner_bot.send_photo(first_chat_id, 'AgACAgUAAxkBAANAX3ajjAWqTCLK3_X1GWJf5rEPJL0AApqqMRujobFX8drOLm3l3RL7eutrdAADAQADAgADbQADmFgEAAEbBA')
                   if flag==1 :
                                           niloner_bot.send_message(first_chat_id, 'My brain does not have a response for that.')
                                           new_offset = first_update_id + 1
