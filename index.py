@@ -19,7 +19,7 @@ class BotHandler:
         result_json = resp.json()['result']
         return result_json
 
-    def send_message(self, chat_id, text):
+    def send_message(self, chat_id, text ,text):
         t_day=d()
         params = {'chat_id': chat_id, 'text': text, 'parse_mode': 'HTML'}
         method = 'sendMessage'
@@ -29,7 +29,7 @@ class BotHandler:
                 par={'chat_id': chat_id, 'animation': ani[u], 'parse_mode': 'HTML'}
                 meth='sendAnimation'
                 res = requests.post(self.api_url + meth, par)
-                return res,resp
+                return resp,res
         return resp
     def send_photo(self, chat_id, text) :
         params = {'chat_id': chat_id, 'photo': text, 'parse_mode': 'HTML'}
