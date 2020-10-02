@@ -222,6 +222,7 @@ def main():
                   if first_chat_text == '/ftt' :
                                 flag=0  
                                 niloner_bot.send_photo(first_chat_id, 'AgACAgUAAxkBAANAX3ajjAWqTCLK3_X1GWJf5rEPJL0AApqqMRujobFX8drOLm3l3RL7eutrdAADAQADAgADbQADmFgEAAEbBA')
+                                new_offset = first_update_id + 1
                   if flag==1 :
                                           niloner_bot.send_message(first_chat_id, 'My brain does not have a response for that.')
                                           new_offset = first_update_id + 1
