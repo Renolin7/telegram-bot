@@ -4,9 +4,6 @@ from Time import *
 temp=['Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !','Link not updated !']
 const='Link not updated !'
 c=['x','x']
-def c():
-   temp=c[0]
-   return temp
 def change(li,n):
   temp[n]=li
 def changesat(h,j):
