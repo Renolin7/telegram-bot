@@ -2,7 +2,9 @@
 from Time import *
 from links import *
 sp="____________________________"
-
+notify=['The last date to pay the Tution Fees for 2020-21 without fine is 28.09.2020. From 29.09.2020 to 15.10.2020 payment of tuition fee with a fine of Rs 100/-']
+def notification ():
+   return(notify)
 def check():
   y = day()
   t = gettime()
