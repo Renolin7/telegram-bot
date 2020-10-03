@@ -90,7 +90,7 @@ def main():
                   break
                 
                 if first_chat_text == '/notify' :
-                  niloner_bot.send_message(first_chat_id, 'NOTIFICATION\n'+sp+ notification ())
+                  niloner_bot.send_message(first_chat_id, 'NOTIFICATION\n'+sp+ notification())
                   new_offset = first_update_id + 1
                  
                 if first_chat_text == '/start':
