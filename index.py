@@ -89,6 +89,10 @@ def main():
                   new_offset = first_update_id + 1
                   break
                 
+                if first_chat_text == '/notify' :
+                  niloner_bot.send_message(first_chat_id, 'NOTIFICATION\n'+sp+ notification ())
+                  new_offset = first_update_id + 1
+                 
                 if first_chat_text == '/start':
                   niloner_bot.send_message(first_chat_id, 'Hi '  + first_chat_name +'\n Type /list for list of notes\n\n\n\nThis bot was created by @Renolin')
                   new_offset = first_update_id + 1
