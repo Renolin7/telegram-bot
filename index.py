@@ -79,7 +79,7 @@ def main():
                     first_chat_name = current_update['message']['chat']['first_name']
                 elif 'new_chat_member' in current_update['message']:
                     first_chat_name = current_update['message']['new_chat_member']['first_name']
-                    niloner_bot.send_message(first_chat_id,'Welcome '+ first_chat_name+'\n\n Hope this group will help you.\n\n\nI'm a bot created by @Renolin')
+                    niloner_bot.send_message(first_chat_id,'Welcome '+first_chat_name+'\n\n Hope this group will help you.\n\n\nI am a bot created by @Renolin')
                     new_offset = first_update_id + 1
                 elif 'from' in current_update['message']:
                     first_chat_name = current_update['message']['from']['first_name']
