@@ -89,7 +89,8 @@ def main():
                     niloner_bot.send_message(first_chat_id,'Welcome '+first_chat_name+'\nHope this group will help you.\n\n\nI am a bot created by @Renolin\n'+sp)
                     new_offset = first_update_id + 1
                 elif 'left_chat_participant' in current_update['message'] :
-                   niloner_bot.send_message(first_chat_id, first_chat_name+' left the group chat.')
+                   ID=current_update['message']['from']['username']
+                   niloner_bot.send_message(first_chat_id, first_chat_name+' was removed by '+ID)
                    new_offset = first_update_id + 1
                 elif first_chat_text == 'Hi' or first_chat_text == 'hi':
                   niloner_bot.send_message(first_chat_id, 'Hi '  + first_chat_name)
