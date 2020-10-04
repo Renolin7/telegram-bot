@@ -80,6 +80,7 @@ def main():
 
     while True:
         temp_time=gettime()
+        print(temp_time)
         if temp_time=='21:16:00' :
                     niloner_bot.send_greet('Good morning')
                     new_offset = first_update_id + 1
