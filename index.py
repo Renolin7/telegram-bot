@@ -35,6 +35,18 @@ class BotHandler:
         resp = requests.post(self.api_url + method, params)
         
         return resp
+    def send_pinned(self, chat_id,text):
+        t_day=d()
+        u=random.randint(0,16)
+        if 'pinned a message' in text.lower() :  
+                par={'chat_id': chat_id, 'animation': ani[u], 'parse_mode': 'HTML'}
+                meth='sendAnimation'
+                res = requests.post(self.api_url + meth, par)
+        
+        params = {'chat_id': chat_id, 'text': text, 'parse_mode': 'HTML'}
+        method = 'sendMessage'
+        resp = requests.post(self.api_url + method, params)
+        return resp
     def send_photo(self, chat_id, text) :
         params = {'chat_id': chat_id, 'photo': text, 'parse_mode': 'HTML'}
         method = 'sendPhoto'
@@ -255,7 +267,7 @@ def main():
                                 new_offset = first_update_id + 1
                   if 'pinned_message' in current_update['message']:
                         flag=0
-                        niloner_bot.send_message(first_chat_id, first_chat_name+' pinned a message\n')
+                        niloner_bot.send_pinned(first_chat_id, first_chat_name+' pinned a message\n')
                         new_offset = first_update_id + 1
 
                   if flag==1 :
