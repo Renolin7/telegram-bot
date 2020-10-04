@@ -96,7 +96,9 @@ def main():
                 elif first_chat_text == '/start':
                   niloner_bot.send_message(first_chat_id, 'Hi '  + first_chat_name +'\n Type /list for list of notes\n\n\n\nThis bot was created by @Renolin')
                   new_offset = first_update_id + 1
-                    
+                elif 'pinned_message' in current_update['message']:
+                  niloner_bot.send_message(first_chat_id, first_chat_name+' pinned a message\n')
+                  new_offset = first_update_id + 1
                 else :
                   flag=1
                   if first_chat_text == '/tt':
