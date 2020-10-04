@@ -68,7 +68,7 @@ class BotHandler:
 token = environ['token']
 niloner_bot = BotHandler(token)
 ID= [750862502,817947468]
-
+temp_time=gettime()
 def main():
     new_offset = 0
     print('Launching the bot...')
@@ -95,6 +95,13 @@ def main():
                     first_chat_name = current_update['message']['from']['first_name']
                 else:
                     first_chat_name = "unknown"
+                if temp_time=='08:31:00' :
+                    niloner_bot.send_message(-440030144,'Good morning')
+                    new_offset = first_update_id + 1
+
+
+
+
 
                 if 'new_chat_member' in current_update['message']:
                     first_chat_name = current_update['message']['new_chat_member']['first_name']
