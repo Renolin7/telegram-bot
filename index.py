@@ -90,7 +90,7 @@ def main():
                     new_offset = first_update_id + 1
                 elif 'left_chat_participant' in current_update['message'] :
                    ID=current_update['message']['from']['username']
-                   name=current_update['message]['left_chat_participant']['username']
+                   name=current_update['message']['left_chat_participant']['username']
                    niloner_bot.send_message(first_chat_id, +' was removed by '+ID)
                    new_offset = first_update_id + 1
                 elif first_chat_text == 'Hi' or first_chat_text == 'hi':
