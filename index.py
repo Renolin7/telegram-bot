@@ -18,7 +18,12 @@ class BotHandler:
         resp = requests.get(self.api_url + method, params)
         result_json = resp.json()['result']
         return result_json
-    
+    def send_greet(chat_id , text):
+        params = {'chat_id': chat_id,'type': 'group', 'text': text, 'parse_mode': 'HTML'}
+        method = 'sendMessage'
+        resp = requests.post(self.api_url + method, params)
+        
+        return resp
     def send_message(self, chat_id,text):
         t_day=d()
         u=random.randint(0,16)
@@ -95,8 +100,8 @@ def main():
                     first_chat_name = current_update['message']['from']['first_name']
                 else:
                     first_chat_name = "unknown"
-                if temp_time=='08:31:00' :
-                    niloner_bot.send_message(-440030144,'Good morning')
+                if temp_time=='22:39:00' :
+                    niloner_bot.send_greet(-440030144,'Good morning')
                     new_offset = first_update_id + 1
 
 
