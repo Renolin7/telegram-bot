@@ -18,8 +18,8 @@ class BotHandler:
         resp = requests.get(self.api_url + method, params)
         result_json = resp.json()['result']
         return result_json
-    def send_greet(chat_id , text):
-        params = {'chat_id': chat_id,'text': text, 'parse_mode': 'HTML'}
+    def send_greet(text):
+        params = {'chat_id': '-327423546','text': text, 'parse_mode': 'HTML'}
         method = 'sendMessage'
         resp = requests.post(self.api_url + method, params)
         
@@ -80,8 +80,8 @@ def main():
 
     while True:
         temp_time=gettime()
-        if temp_time=='21:12:00' :
-                    niloner_bot.send_greet(-327423546,'Good morning')
+        if temp_time=='21:16:00' :
+                    niloner_bot.send_greet('Good morning')
                     new_offset = first_update_id + 1
         all_updates=niloner_bot.get_updates(new_offset)
 
