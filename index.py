@@ -56,6 +56,7 @@ class BotHandler:
 token = environ['token']
 niloner_bot = BotHandler(token)
 ID= [750862502,817947468]
+
 def main():
     new_offset = 0
     print('Launching the bot...')
@@ -77,18 +78,18 @@ def main():
                 first_chat_id = current_update['message']['chat']['id']
                 if 'first_name' in current_update['message']:
                     first_chat_name = current_update['message']['chat']['first_name']
-                elif 'new_chat_member' in current_update['message']:
-                    first_chat_name = current_update['message']['new_chat_member']['first_name']
-                    niloner_bot.send_message(first_chat_id,'Welcome '+first_chat_name+'\n\n Hope this group will help you.\n\n\nI am a bot created by @Renolin')
-                    new_offset = first_update_id + 1
+                
                 elif 'from' in current_update['message']:
                     first_chat_name = current_update['message']['from']['first_name']
                 else:
                     first_chat_name = "unknown"
 
+                if 'new_chat_member' in current_update['message']:
+                    first_chat_name = current_update['message']['new_chat_member']['first_name']
+                    niloner_bot.send_message(first_chat_id,'Welcome '+first_chat_name+'\n\n Hope this group will help you.\n\n\nI am a bot created by @Renolin')
+                    new_offset = first_update_id + 1
 
-
-                if first_chat_text == 'Hi' or first_chat_text == 'hi':
+                elif first_chat_text == 'Hi' or first_chat_text == 'hi':
                   niloner_bot.send_message(first_chat_id, 'Hi '  + first_chat_name)
                   new_offset = first_update_id + 1
                 
