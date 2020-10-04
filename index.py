@@ -87,7 +87,7 @@ def main():
                 print(current_update)
                 temp_time=gettime()
                 print(temp_time)
-                if temp_time=='21:25:00' :
+                if temp_time=='21:35:00' :
                     niloner_bot.send_greet('Good morning')
  
                 first_update_id = current_update['update_id']
