@@ -80,7 +80,7 @@ def main():
 
     while True:
         temp_time=gettime()
-        if temp_time=='20:49:00' :
+        if temp_time=='21:06:00' :
                     niloner_bot.send_greet(-327423546,'Good morning')
                     new_offset = first_update_id + 1
         all_updates=niloner_bot.get_updates(new_offset)
