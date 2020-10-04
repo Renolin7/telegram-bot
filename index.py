@@ -89,8 +89,8 @@ def main():
                     niloner_bot.send_message(first_chat_id,'Welcome '+first_chat_name+'\nHope this group will help you.\n\n\nI am a bot created by @Renolin\n'+sp)
                     new_offset = first_update_id + 1
                 elif 'left_chat_participant' in current_update['message'] :
-                   temp_name=current_update['message']['from']['username']
-                   name=current_update['message']['left_chat_participant']['username']
+                   temp_name=current_update['message']['from']['first_name']
+                   name=current_update['message']['left_chat_participant']['first_name']
                    niloner_bot.send_message(first_chat_id, name+' was removed by '+temp_name)
                    new_offset = first_update_id + 1
                 elif first_chat_text == 'Hi' or first_chat_text == 'hi':
