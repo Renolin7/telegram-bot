@@ -241,10 +241,10 @@ def main():
                                 flag=0  
                                 niloner_bot.send_photo(first_chat_id, 'AgACAgUAAxkBAAIF_V92plbUjrx94tYKodyeNQmdWPjbAAKaqjEbo6GxV-x6we6XqVjA-3rra3QAAwEAAwIAA3gAA5lYBAABGwQ')
                                 new_offset = first_update_id + 1
-                  if 'pinned_message' in current_update['message']:
-                        flag=0
-                        niloner_bot.send_message(first_chat_id, first_chat_name+' pinned a message\n')
-                        new_offset = first_update_id + 1
+                  #if 'pinned_message' in current_update['message']:
+                        #flag=0
+                        #niloner_bot.send_message(first_chat_id, first_chat_name+' pinned a message\n')
+                        #new_offset = first_update_id + 1
 
                   if flag==1 :
                                           niloner_bot.send_message(first_chat_id, 'My brain does not have a response for that.')
