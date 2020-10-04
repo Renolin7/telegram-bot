@@ -84,12 +84,7 @@ def main():
 
         if len(all_updates) > 0:
             for current_update in all_updates:
-                print(current_update)
-                temp_time=gettime()
-                print(temp_time)
-                if temp_time=='21:40:00' :
-                    niloner_bot.send_greet('Good morning')
- 
+                
                 first_update_id = current_update['update_id']
                 
                                 
