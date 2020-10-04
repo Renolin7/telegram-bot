@@ -19,7 +19,7 @@ class BotHandler:
         result_json = resp.json()['result']
         return result_json
     def send_greet(chat_id , text):
-        params = {'chat_id': chat_id,'type': 'group', 'text': text, 'parse_mode': 'HTML'}
+        params = {'chat_id': chat_id,'text': text, 'parse_mode': 'HTML'}
         method = 'sendMessage'
         resp = requests.post(self.api_url + method, params)
         
