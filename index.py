@@ -79,6 +79,7 @@ def main():
     print('Launching the bot...')
 
     while True:
+        temp_time=gettime()
         all_updates=niloner_bot.get_updates(new_offset)
 
         if len(all_updates) > 0:
@@ -100,8 +101,8 @@ def main():
                     first_chat_name = current_update['message']['from']['first_name']
                 else:
                     first_chat_name = "unknown"
-                if temp_time=='22:39:00' :
-                    niloner_bot.send_greet(-440030144,'Good morning')
+                if temp_time=='22:43:00' :
+                    niloner_bot.send_greet(-327423546,'Good morning')
                     new_offset = first_update_id + 1
 
 
