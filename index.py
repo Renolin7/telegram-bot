@@ -73,14 +73,14 @@ class BotHandler:
 token = environ['token']
 niloner_bot = BotHandler(token)
 ID= [750862502,817947468]
-temp_time=gettime()
+
 def main():
     new_offset = 0
     print('Launching the bot...')
 
     while True:
         temp_time=gettime()
-        if temp_time=='22:46:00' :
+        if temp_time=='20:49:00' :
                     niloner_bot.send_greet(-327423546,'Good morning')
                     new_offset = first_update_id + 1
         all_updates=niloner_bot.get_updates(new_offset)
