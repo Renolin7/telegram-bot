@@ -84,7 +84,7 @@ def main():
 
         if len(all_updates) > 0:
             for current_update in all_updates:
-                
+                print(current_update)
                 first_update_id = current_update['update_id']
                 
                                 
