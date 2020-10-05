@@ -133,7 +133,7 @@ def main():
                   new_offset = first_update_id + 1
                 
                 elif first_chat_text == '/notify' :
-                  niloner_bot.send_message(first_chat_id,m_id, '<b>NOTIFICATION</b>'+'<i>'+notification()+'</i>')
+                  niloner_bot.send_message(first_chat_id,m_id, '<b>NOTIFICATION</b>\n\n'+'<i>'+notification()+'</i>')
                   new_offset = first_update_id + 1
                  
                 elif first_chat_text == '/start':
