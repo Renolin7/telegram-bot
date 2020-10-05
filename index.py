@@ -61,7 +61,7 @@ class BotHandler:
         met='sendchataction'
         para={'chat_id':chat_id ,'action' : 'upload_photo'}
         respons=requests.post(self.api_url + met, para)
-        params = {'chat_id': chat_id,'reply_to_message_id':_id, 'photo': text, 'parse_mode': 'HTML'}
+        params = {'chat_id': chat_id,'reply_to_message_id':m_id, 'photo': text, 'parse_mode': 'HTML'}
         method = 'sendPhoto'
         resp = requests.post(self.api_url + method, params)
         return resp
