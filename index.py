@@ -89,10 +89,10 @@ def main():
     while True:
         
         all_updates=niloner_bot.get_updates(new_offset)
-        print(current_update)
+       
         if len(all_updates) > 0:
             for current_update in all_updates:
-                
+                print(current_update)
                 first_update_id = current_update['update_id']
                 
                 m_id = current_update['message']['message_id']
