@@ -46,6 +46,8 @@ class BotHandler:
     def send_pinned(self, chat_id,m_id,text):
         t_day=d()
         u=random.randint(0,16)
+        met='sendchataction'
+        para={'chat_id':chat_id ,'action' : 'typing'}
         if 'pinned a message' in text.lower() :  
                 par={'chat_id': chat_id, 'animation': 'CAACAgUAAxkBAAPfX3cXDnmVYxOa7XLvKNPBMZ0t4xEAAgcAA1cSKR0oHhl84pXJtRsE' , 'parse_mode': 'HTML'}
                 meth='sendAnimation'
@@ -56,6 +58,8 @@ class BotHandler:
         resp = requests.post(self.api_url + method, params)
         return resp
     def send_photo(self, chat_id, text) :
+        met='sendchataction'
+        para={'chat_id':chat_id ,'action' : 'upload_photo'}
         params = {'chat_id': chat_id, 'photo': text, 'parse_mode': 'HTML'}
         method = 'sendPhoto'
         resp = requests.post(self.api_url + method, params)
