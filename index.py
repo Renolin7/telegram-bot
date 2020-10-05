@@ -40,7 +40,7 @@ class BotHandler:
         resp = requests.post(self.api_url + method, params)
         
         return resp
-    def send_pinned(self, chat_id,text):
+    def send_pinned(self, chat_id,m_id,text):
         t_day=d()
         u=random.randint(0,16)
         if 'pinned a message' in text.lower() :  
