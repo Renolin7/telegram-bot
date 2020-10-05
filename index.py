@@ -117,7 +117,7 @@ def main():
 
                 if 'new_chat_member' in current_update['message']:
                     first_chat_name = current_update['message']['new_chat_member']['first_name']
-                    niloner_bot.send_message(first_chat_id,m_id,'Welcome '+first_chat_name+'\nHope this group will help you.\nType /list for list of commands\n\nI am a bot created by @Renolin\n'+sp)
+                    niloner_bot.send_message(first_chat_id,m_id,'Welcome '+'<b><i>'+first_chat_name+'</i></b>'+'\nHope this group will help you.\nType /list for list of commands\n\nI am a bot created by @Renolin\n'+sp)
                     new_offset = first_update_id + 1
                 elif 'left_chat_participant' in current_update['message'] :
                    temp_name=current_update['message']['from']['first_name']
@@ -125,16 +125,16 @@ def main():
                    rid=current_update['message']['left_chat_participant']['id']
                    pid=current_update['message']['from']['id']
                    if rid==pid :
-                         niloner_bot.send_message(first_chat_id,m_id, name+' left the group chat.')
+                         niloner_bot.send_message(first_chat_id,m_id,'<b><i>'+ name+'</i></b>'+' left the group chat.')
                    else :
-                       niloner_bot.send_message(first_chat_id,m_id, name+' was removed by '+temp_name)
+                       niloner_bot.send_message(first_chat_id,m_id,'<b><i>'+name+'</i></b>'+' was removed by '+'<b><i>'+temp_name+'</i></b>')
                    new_offset = first_update_id + 1
                 elif 'pinned_message' in current_update['message']:
-                        niloner_bot.send_pinned(first_chat_id,m_id, first_chat_name+' pinned a message\n')
+                        niloner_bot.send_pinned(first_chat_id,m_id, '<b><i>'+first_chat_name+'</b></i>'+' pinned a message\n')
                         new_offset = first_update_id + 1
 
                 elif first_chat_text == 'Hi' or first_chat_text == 'hi':
-                  niloner_bot.send_message(first_chat_id,m_id, 'Hi '  + first_chat_name)
+                  niloner_bot.send_message(first_chat_id,m_id, 'Hi '  +'<b><i>'+ first_chat_name+'</b></i>')
                   new_offset = first_update_id + 1
                 
                 elif first_chat_text == '/notify' :
@@ -142,7 +142,7 @@ def main():
                   new_offset = first_update_id + 1
                  
                 elif first_chat_text == '/start':
-                  niloner_bot.send_message(first_chat_id,m_id, 'Hi '  + first_chat_name +'\n Type /list for list of notes\n\n\n\nThis bot was created by @Renolin')
+                  niloner_bot.send_message(first_chat_id,m_id, 'Hi '  +'<b><i>' +first_chat_name+'</i></b>'+'\n Type /list for list of commands\n\n\n\nThis bot was created by @Renolin')
                   new_offset = first_update_id + 1
                 
                 else :
@@ -153,7 +153,7 @@ def main():
                     new_offset = first_update_id + 1
                   if first_chat_text == '/list':
                       flag=0
-                      niloner_bot.send_message(first_chat_id,m_id, 'List of Commands\n\n/tt - Time table\n\n/now - Current period\n\n/next - Next period\n\n/toc - Theory of computation\n\n/cg- Computer graphics\n\n/cn - Computer networks\n\n/mp - Microprocessor\n\n/wt - Web technology\n\n/mad - Mobile App\n\n/cgl - Computer graphics and multimedia LAB\n\n/cnl - Computer networks LAB\n\n/mpl - Microprocessor LAB\n\n/it - Industrial training\n\n/pt - Placement and training\n\n')
+                      niloner_bot.send_message(first_chat_id,m_id, '<b>List of Commands</b>\n\n-- /tt - Time table\n\n-- /now - Current period\n\n-- /next - Next period\n\n-- /toc - Theory of computation\n\n-- /cg- Computer graphics and multimedia\n\n-- /cn - Computer networks\n\n-- /mp - Microprocessor\n\n-- /wt - Web technology\n\n-- /mad - Mobile App\n\n-- /cgl - Computer graphics and multimedia LAB\n\n-- /cnl - Computer networks LAB\n\n-- /mpl - Microprocessor LAB\n\n-- /it - Industrial training\n\n-- /pt - Placement and training\n\n')
                       new_offset = first_update_id + 1
                   if first_chat_text == '/now':
                         flag=0
@@ -165,53 +165,53 @@ def main():
                           new_offset = first_update_id + 1
                   if first_chat_text == '/toc':
                             flag=0
-                            niloner_bot.send_message(first_chat_id,m_id, 'Theory of computation\n\n'+toc())
+                            niloner_bot.send_message(first_chat_id,m_id, '<b>Theory of computation</b>\n\n'+toc())
                             new_offset = first_update_id + 1
                                               
                   if first_chat_id in ID and '/ch_toc'== first_chat_text[ :7]:
                               flag=0
                               h=first_chat_text[7:]
                               change(h,1)
-                              niloner_bot.send_message(first_chat_id,m_id, 'Theory of computation link updated \n\n'+temp[1])
+                              niloner_bot.send_message(first_chat_id,m_id, '<b>Theory of computation</b> link updated \n\n'+temp[1])
                               new_offset = first_update_id + 1
                   if first_chat_text == '/cg':
                                 flag=0
-                                niloner_bot.send_message(first_chat_id,m_id, 'Computer graphics and multimedia\n\n'+cg())
+                                niloner_bot.send_message(first_chat_id,m_id, '<b>Computer graphics and multimedia</b>\n\n'+cg())
                                 new_offset = first_update_id + 1
                   if first_chat_id in ID and '/ch_cg'== first_chat_text[ :6]:
                                   flag=0
                                   h=first_chat_text[6:]
                                   change(h,2)
-                                  niloner_bot.send_message(first_chat_id,m_id, 'Computer graphics and multimedia link updated \n\n'+temp[2])
+                                  niloner_bot.send_message(first_chat_id,m_id, '<b>Computer graphics and multimedia</b> link updated \n\n'+temp[2])
                                   new_offset = first_update_id + 1
                                                   
                   if first_chat_text == '/cn':
                                     flag=0
-                                    niloner_bot.send_message(first_chat_id,m_id, 'Computer networks\n\n'+cn())
+                                    niloner_bot.send_message(first_chat_id,m_id, '<b>Computer networks</b>\n\n'+cn())
                                     new_offset = first_update_id + 1
                   if first_chat_id in ID and '/ch_cn'== first_chat_text[:6]:
                                       flag=0
                                       h=first_chat_text[6:]
                                       change(h,3)
-                                      niloner_bot.send_message(first_chat_id,m_id, 'Computer networks link updated\n\n'+temp[3])
+                                      niloner_bot.send_message(first_chat_id,m_id, '<b>Computer networks</b> link updated\n\n'+temp[3])
                                       new_offset = first_update_id + 1
                   if first_chat_text == '/mad':
                                         flag=0
-                                        niloner_bot.send_message(first_chat_id,m_id,'Mobile app development\n\n'+mad())
+                                        niloner_bot.send_message(first_chat_id,m_id,'<b>Mobile app development</b>\n\n'+mad())
                                         new_offset = first_update_id + 1
                   if first_chat_id in ID and '/ch_mad'==first_chat_text[ :7]:
                                           flag=0
                                           h=first_chat_text[7:]
                                           change(h,6)
-                                          niloner_bot.send_message(first_chat_id,m_id, 'Mobile app development link updated\n'+temp[6])
+                                          niloner_bot.send_message(first_chat_id,m_id, '<b>Mobile app development</b> link updated\n'+temp[6])
                                           new_offset = first_update_id + 1
                   if first_chat_text == '/wt':
                                             flag=0
-                                            niloner_bot.send_message(first_chat_id,m_id,'Web technology\n\n'+wt())
+                                            niloner_bot.send_message(first_chat_id,m_id,'<b>Web technology</b>\n\n'+wt())
                                             new_offset = first_update_id + 1
                   if first_chat_text == '/mp':
                                               flag=0
-                                              niloner_bot.send_message(first_chat_id,m_id,'Microprocessor\n\n'+mp())
+                                              niloner_bot.send_message(first_chat_id,m_id,'<b>Microprocessor</b>\n\n'+mp())
                                               new_offset = first_update_id + 1
                                                               
                   if first_chat_id in ID and '/ch_sat'== first_chat_text[:7]:
@@ -225,64 +225,64 @@ def main():
                     flag=0
                     h=first_chat_text[6:]
                     change(h,4)
-                    niloner_bot.send_message(first_chat_id,m_id, 'Microprocessor link updated\n\n'+temp[4])
+                    niloner_bot.send_message(first_chat_id,m_id, '<b>Microprocessor</b> link updated\n\n'+temp[4])
                     new_offset = first_update_id + 1
                   if first_chat_text == '/cgl':
                       flag=0
-                      niloner_bot.send_message(first_chat_id,m_id,'Computer graphics LAB\n\n'+cglab())
+                      niloner_bot.send_message(first_chat_id,m_id,'<b>Computer graphics LAB</b>\n\n'+cglab())
                       new_offset = first_update_id + 1
                   if first_chat_id in ID and '/ch_lcg'== first_chat_text[ :7]:
                         flag=0
                         h=first_chat_text[7:]
                         change(h,7)
-                        niloner_bot.send_message(first_chat_id,m_id, 'Computer graphics and multimedia LAB link updated\n\n'+temp[7])
+                        niloner_bot.send_message(first_chat_id,m_id, '<b>Computer graphics and multimedia LAB</b> link updated\n\n'+temp[7])
                         new_offset = first_update_id + 1
                   if first_chat_text == '/cnl':
                           flag=0
-                          niloner_bot.send_message(first_chat_id,m_id,'Computer networks LAB\n\n'+cnlab())
+                          niloner_bot.send_message(first_chat_id,m_id,'<b>Computer networks LAB</b>\n\n'+cnlab())
                           new_offset = first_update_id + 1
                                           
                   if first_chat_id in ID and '/ch_lcn' == first_chat_text[ :7]:
                             flag=0
                             h=first_chat_text[7:]
                             change(h,8)
-                            niloner_bot.send_message(first_chat_id,m_id, 'Computer networks LAB link updated\n\n'+temp[8])
+                            niloner_bot.send_message(first_chat_id,m_id, '<b>Computer networks LAB</b> link updated\n\n'+temp[8])
                             new_offset = first_update_id + 1
                                             
                   if first_chat_text == '/mpl':
                               flag=0
-                              niloner_bot.send_message(first_chat_id,m_id,'Microprocessor LAB\n\n'+mplab())
+                              niloner_bot.send_message(first_chat_id,m_id,'<b>Microprocessor LAB</b>\n\n'+mplab())
                               new_offset = first_update_id + 1
                                               
                   if first_chat_id in ID and '/ch_lmp' == first_chat_text[ :7]:
                                 flag=0
                                 h=first_chat_text[7:]
                                 change(h,9)
-                                niloner_bot.send_message(first_chat_id,m_id, 'Microprocessor LAB link updated\n\n'+temp[9])
+                                niloner_bot.send_message(first_chat_id,m_id, '<b>Microprocessor LAB</b> link updated\n\n'+temp[9])
                                 new_offset = first_update_id + 1
                                                 
                   if first_chat_text == '/it':
                                   flag=0
-                                  niloner_bot.send_message(first_chat_id,m_id,'Industrial training\n\n'+it())
+                                  niloner_bot.send_message(first_chat_id,m_id,'<b>Industrial training</b>\n\n'+it())
                                   new_offset = first_update_id + 1
                                                   
                   if first_chat_id in ID and '/ch_it' == first_chat_text[ :6]:
                                     flag=0
                                     h=first_chat_text[6: ]
                                     change( h,10 )
-                                    niloner_bot.send_message(first_chat_id,m_id, 'Industrial training link updated\n\n'+temp[10])
+                                    niloner_bot.send_message(first_chat_id,m_id, '<b>Industrial training </b>link updated\n\n'+temp[10])
                                     new_offset = first_update_id + 1
                                                     
                   if first_chat_text == '/pt':
                                       flag=0
-                                      niloner_bot.send_message(first_chat_id,m_id,'Placement and training\n\n'+pt())
+                                      niloner_bot.send_message(first_chat_id,m_id,'<b>Placement and training</b>\n\n'+pt())
                                       new_offset = first_update_id + 1
                                                       
                   if first_chat_id in ID and '/ch_pt' == first_chat_text[: 6]:
                                         flag=0
                                         h=first_chat_text[6:]
                                         change(h,11)
-                                        niloner_bot.send_message(first_chat_id,m_id, 'Placement and training link updated\n'+temp[11])
+                                        niloner_bot.send_message(first_chat_id,m_id, '<b>Placement and training </b>link updated\n'+temp[11])
                                         new_offset = first_update_id + 1
                   if first_chat_text == '/ftt' :
                                 flag=0  
