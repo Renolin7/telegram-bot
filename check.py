@@ -5,6 +5,8 @@ sp="____________________________"
 notify=['The last date to pay the Tution Fees for <b>2020-21</b> without fine is <b>28.09.2020</b>. From <b>29.09.2020</b> to <b>15.10.2020</b> payment of tuition fee with a fine of <b>Rs 100/-</b>']
 def notification():
    return(notify[0])
+def change_notify(h):
+   notify[0]=h
 def check():
   y = day()
   t = gettime()
