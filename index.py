@@ -27,6 +27,9 @@ class BotHandler:
     def send_message(self, chat_id,m_id,text):
         t_day=d()
         u=random.randint(0,16)
+        met='sendchataction'
+        para={'chat_id':chat_id ,'action' : 'typing'}
+        respons=requests.post(self.api_url + met, para)
         if 'holiday' in text.lower() and (c[0]=='0' or t_day=='Sun' ):  
                 par={'chat_id': chat_id, 'animation': ani[u], 'parse_mode': 'HTML'}
                 meth='sendAnimation'
