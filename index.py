@@ -138,7 +138,7 @@ def main():
                   new_offset = first_update_id + 1
                 
                 elif first_chat_text == '/notify' :
-                  niloner_bot.send_message(first_chat_id,m_id, '<b style="color : red">NOTIFICATION</b>\n\n'+'<i>'+notification()+'</i>')
+                  niloner_bot.send_message(first_chat_id,m_id, '<b>NOTIFICATION</b>\n\n'+'<i>'+notification()+'</i>')
                   new_offset = first_update_id + 1
                  
                 elif first_chat_text == '/start':
@@ -288,7 +288,12 @@ def main():
                                 flag=0  
                                 niloner_bot.send_photo(first_chat_id,m_id, 'AgACAgUAAxkBAAIF_V92plbUjrx94tYKodyeNQmdWPjbAAKaqjEbo6GxV-x6we6XqVjA-3rra3QAAwEAAwIAA3gAA5lYBAABGwQ')
                                 new_offset = first_update_id + 1
-                  
+                  if '/ch_notify' in first_chat_text and first_chat_id in ID :
+                              flag=0
+                              h=first_chat_text[10: ]
+                              change_notify(h)
+                              niloner_bot.send_photo(first_chat_id,m_id, 'Notification updated\n'+notification())
+                              new_offset = first_update_id + 1
                   if flag==1 :
                                           niloner_bot.send_message(first_chat_id,m_id, 'My brain does not have a response for that.')
                                           new_offset = first_update_id + 1
