@@ -89,7 +89,7 @@ def main():
     while True:
         
         all_updates=niloner_bot.get_updates(new_offset)
-
+        print(current_update)
         if len(all_updates) > 0:
             for current_update in all_updates:
                 
@@ -292,7 +292,7 @@ def main():
                               flag=0
                               h=first_chat_text[10: ]
                               change_notify(h)
-                              niloner_bot.send_photo(first_chat_id,m_id, 'Notification updated\n'+notification())
+                              niloner_bot.send_message(first_chat_id,m_id, 'Notification updated\n'+notification())
                               new_offset = first_update_id + 1
                   if flag==1 :
                                           niloner_bot.send_message(first_chat_id,m_id, 'My brain does not have a response for that.')
