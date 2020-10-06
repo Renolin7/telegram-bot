@@ -18,6 +18,13 @@ class BotHandler:
         resp = requests.get(self.api_url + method, params)
         result_json = resp.json()['result']
         return result_json
+    def send_notify(chat_id,m_id,text):
+         key={'inline_keyboard':[[{'text': 'Fees payment','url':'https://annamalaiuniversity.ac.in/studport/epayment_rgl_tfee.php?mode=oNln' }]]}
+         keyys=json.dumps(key)
+         params = {'chat_id': chat_id, 'text': text,'parse_mode':'HTML','reply_markup':keyys}
+         method = 'sendMessage'
+         resp = requests.post(self.api_url + method, params)
+         return resp
     def send_greet(text):
         params = {'chat_id': '-327423546','text': text, 'parse_mode': 'HTML'}
         method = 'sendMessage'
@@ -138,7 +145,7 @@ def main():
                   new_offset = first_update_id + 1
                 
                 elif first_chat_text == '/notify' :
-                  niloner_bot.send_message(first_chat_id,m_id, '<b>NOTIFICATION</b>\n\n'+'<i>'+notification()+'</i>')
+                  niloner_bot.send_notify(first_chat_id,m_id, '<b>NOTIFICATION</b>\n\n'+'<i>'+notification()+'</i>')
                   new_offset = first_update_id + 1
                  
                 elif first_chat_text == '/start':
