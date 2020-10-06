@@ -55,9 +55,9 @@ class BotHandler:
         met='sendchataction'
         para={'chat_id':chat_id ,'action' : 'typing'}
         respons=requests.post(self.api_url + met, para)
-        par={'chat_id': chat_id, 'animation': 'CAACAgUAAxkBAAPfX3cXDnmVYxOa7XLvKNPBMZ0t4xEAAgcAA1cSKR0oHhl84pXJtRsE', 'parse_mode': 'HTML'}
-        meth='sendAnimation'
-        res = requests.post(self.api_url + meth, par)
+        #par={'chat_id': chat_id, 'animation': 'CAACAgUAAxkBAAPfX3cXDnmVYxOa7XLvKNPBMZ0t4xEAAgcAA1cSKR0oHhl84pXJtRsE', 'parse_mode': 'HTML'}
+        #meth='sendAnimation'
+        #res = requests.post(self.api_url + meth, par)
         params = {'chat_id': chat_id,'reply_to_message_id' : m_id, 'text': text, 'parse_mode': 'HTML'}
         method = 'sendMessage'
         resp = requests.post(self.api_url + method, params)
