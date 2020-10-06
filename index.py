@@ -55,9 +55,9 @@ class BotHandler:
         met='sendchataction'
         para={'chat_id':chat_id ,'action' : 'typing'}
         respons=requests.post(self.api_url + met, para)
-        #par={'chat_id': chat_id, 'animation': 'CAACAgUAAxkBAAPfX3cXDnmVYxOa7XLvKNPBMZ0t4xEAAgcAA1cSKR0oHhl84pXJtRsE', 'parse_mode': 'HTML'}
-        #meth='sendAnimation'
-        #res = requests.post(self.api_url + meth, par)
+        par={'chat_id': chat_id, 'animation': 'CAACAgUAAxkBAAPfX3cXDnmVYxOa7XLvKNPBMZ0t4xEAAgcAA1cSKR0oHhl84pXJtRsE', 'parse_mode': 'HTML'}
+        meth='sendAnimation'
+        res = requests.post(self.api_url + meth, par)
         params = {'chat_id': chat_id, 'text': text, 'parse_mode': 'HTML'}
         method = 'sendMessage'
         resp = requests.post(self.api_url + method, params)
@@ -136,11 +136,11 @@ def main():
                        niloner_bot.send_message(first_chat_id,m_id,'<b><i>'+name+'</i></b>'+' was removed by '+'<b><i>'+temp_name+'</i></b>')
                    new_offset = first_update_id + 1
                 elif 'pinned_message' in current_update['message']:
-                        niloner_bot.send_pinned(first_chat_id,m_id, '<b><i>'+first_chat_name+'</b></i>'+' pinned a message\n')
+                        niloner_bot.send_pinned(first_chat_id,m_id,first_chat_name+' pinned a message\n')
                         new_offset = first_update_id + 1
 
                 elif first_chat_text == 'Hi' or first_chat_text == 'hi':
-                  niloner_bot.send_pinned(first_chat_id,m_id, 'Hi '  +'<b><i>'+ first_chat_name+'</b></i>')
+                  niloner_bot.send_pinned(first_chat_id,m_id, 'Hi '  +first_chat_name)
                   new_offset = first_update_id + 1
                 
                 elif first_chat_text == '/notify' :
