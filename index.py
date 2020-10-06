@@ -60,7 +60,6 @@ class BotHandler:
                 par={'chat_id': chat_id, 'animation': 'CAACAgUAAxkBAAPfX3cXDnmVYxOa7XLvKNPBMZ0t4xEAAgcAA1cSKR0oHhl84pXJtRsE' , 'parse_mode': 'HTML'}
                 meth='sendAnimation'
                 res = requests.post(self.api_url + meth, par)
-        
         params = {'chat_id': chat_id,'reply_to_message_id' : m_id, 'text': text, 'parse_mode': 'HTML'}
         method = 'sendMessage'
         resp = requests.post(self.api_url + method, params)
@@ -142,7 +141,7 @@ def main():
                         new_offset = first_update_id + 1
 
                 elif first_chat_text == 'Hi' or first_chat_text == 'hi':
-                  niloner_bot.send_message(first_chat_id,m_id, 'Hi '  +'<b><i>'+ first_chat_name+'</b></i>')
+                  niloner_bot.send_pinned(first_chat_id,m_id, 'Hi '  +'<b><i>'+ first_chat_name+'</b></i>')
                   new_offset = first_update_id + 1
                 
                 elif first_chat_text == '/notify' :
