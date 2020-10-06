@@ -52,10 +52,9 @@ class BotHandler:
         
         return resp
     def send_pinned(self, chat_id,m_id,text):
-        t_day=d()
-        u=random.randint(0,16)
         met='sendchataction'
         para={'chat_id':chat_id ,'action' : 'typing'}
+        res = requests.post(self.api_url + met, para)
         if 'pinned a message' in text.lower() :  
                 par={'chat_id': chat_id, 'animation': 'CAACAgUAAxkBAAPfX3cXDnmVYxOa7XLvKNPBMZ0t4xEAAgcAA1cSKR0oHhl84pXJtRsE' , 'parse_mode': 'HTML'}
                 meth='sendAnimation'
