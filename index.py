@@ -73,7 +73,7 @@ class BotHandler:
         return resp
     def send_button(self,chat_id,m_id,text):
          key={'keyboard':[[{'text':'/tt'},{'text':'/ftt'},{'text':'/now'},{'text':'/next'}],[{'text':'/toc'},{'text':'/cg'},{'text':'/cn'}],
-      [{'text':'/mp'},{'text':'/wt'},{'text':'/mad'}],[{'text':'/cgl'},{'text':'/cnl'},{'text':'/mpl'}],[{'text':'/it'},{'text':'/pt'}],[{'text':'/help'}]]}
+      [{'text':'/mp'},{'text':'/wt'},{'text':'/mad'}],[{'text':'/cgl'},{'text':'/cnl'},{'text':'/mpl'}],[{'text':'/it'},{'text':'/pt'}],[{'text':'/help'},{/notify}]]}
          keyys=json.dumps(key)
          params = {'chat_id': chat_id, 'text': text,'parse_mode':'HTML','reply_markup':keyys}
          method = 'sendMessage'
