@@ -20,6 +20,12 @@ class BotHandler:
         result_json = resp.json()['result']
         return result_json
     def send_notify(self,chat_id,m_id,text):
+         met='sendchataction'
+         para={'chat_id':chat_id ,'action' : 'typing'}
+         respons=requests.post(self.api_url + met, para)
+         par={'chat_id': chat_id, 'animation': 'CAACAgUAAxkBAAIQLl994ZQ_yW7Qr0xLrpxPGBrMPm-9AAIRAAOmQMEsxAMuLenxHYgbBA', 'parse_mode': 'HTML'}
+         meth='sendAnimation'
+         res = requests.post(self.api_url + meth, par)
          key={'inline_keyboard':[[{'text': 'Fees payment','url':'https://annamalaiuniversity.ac.in/studport/epayment_rgl_tfee.php?mode=oNln' }]]}
          keyys=json.dumps(key)
          params = {'chat_id': chat_id, 'text': text,'parse_mode':'HTML','reply_markup':keyys}
