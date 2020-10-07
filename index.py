@@ -43,7 +43,7 @@ class BotHandler:
                 meth='sendAnimation'
                 res = requests.post(self.api_url + meth, par)
         else:
-            par={'chat_id': chat_id, 'animation': 'CAACAgUAAxkBAAPfX3cXDnmVYxOa7XLvKNPBMZ0t4xEAAgcAA1cSKR0oHhl84pXJtRsE', 'parse_mode': 'HTML'}
+            par={'chat_id': chat_id, 'animation': 'CAACAgUAAxkBAAIQLl994ZQ_yW7Qr0xLrpxPGBrMPm-9AAIRAAOmQMEsxAMuLenxHYgbBA', 'parse_mode': 'HTML'}
             meth='sendAnimation'
             res = requests.post(self.api_url + meth, par)
         params = {'chat_id': chat_id,'reply_to_message_id' : m_id, 'text': text, 'parse_mode': 'HTML'}
@@ -55,7 +55,7 @@ class BotHandler:
         met='sendchataction'
         para={'chat_id':chat_id ,'action' : 'typing'}
         respons=requests.post(self.api_url + met, para)
-        par={'chat_id': chat_id, 'animation': 'CAACAgUAAxkBAAPfX3cXDnmVYxOa7XLvKNPBMZ0t4xEAAgcAA1cSKR0oHhl84pXJtRsE', 'parse_mode': 'HTML'}
+        par={'chat_id': chat_id, 'animation': 'CAACAgUAAxkBAAIQLl994ZQ_yW7Qr0xLrpxPGBrMPm-9AAIRAAOmQMEsxAMuLenxHYgbBA', 'parse_mode': 'HTML'}
         meth='sendAnimation'
         res = requests.post(self.api_url + meth, par)
         params = {'chat_id': chat_id,'reply_to_message_id': m_id, 'text': text, 'parse_mode': 'HTML'}
@@ -72,6 +72,12 @@ class BotHandler:
         resp = requests.post(self.api_url + method, params)
         return resp
     def send_button(self,chat_id,m_id,text):
+         met='sendchataction'
+         para={'chat_id':chat_id ,'action' : 'typing'}
+         respons=requests.post(self.api_url + met, para)
+         par={'chat_id': chat_id, 'animation': 'CAACAgUAAxkBAAIQLl994ZQ_yW7Qr0xLrpxPGBrMPm-9AAIRAAOmQMEsxAMuLenxHYgbBA', 'parse_mode': 'HTML'}
+         meth='sendAnimation'
+         res = requests.post(self.api_url + meth, par)
          key={'keyboard':[[{'text':'/tt'},{'text':'/ftt'},{'text':'/now'},{'text':'/next'}],[{'text':'/toc'},{'text':'/cg'},{'text':'/cn'}],
       [{'text':'/mp'},{'text':'/wt'},{'text':'/mad'}],[{'text':'/cgl'},{'text':'/cnl'},{'text':'/mpl'}],[{'text':'/it'},{'text':'/pt'}],[{'text':'/help'},{'text':'/notify'}]]}
          keyys=json.dumps(key)
