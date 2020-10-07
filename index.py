@@ -72,8 +72,8 @@ class BotHandler:
         resp = requests.post(self.api_url + method, params)
         return resp
     def send_button(self,chat_id,m_id,text):
-         key={'keyboard':[[{'text':'/now'},{'text':'/next'}],[{'text':'/toc'},{'text':'/cg'}],
-      [{'text':'/cn'},{'text':'/mp'}],[{'text':'/wt'},{'text':'/mad'}],[{'text':'/cgl'},{'text':'/cnl'},{'text':'/mpl'}],[{'text':'/it'},{'text':'/pt'}]]}
+         key={'keyboard':[[{'text':'/tt'},{'text':'/ftt'},{'text':'/now'},{'text':'/next'}],[{'text':'/toc'},{'text':'/cg'},{'text':'/cn'}],
+      [{'text':'/mp'},{'text':'/wt'},{'text':'/mad'}],[{'text':'/cgl'},{'text':'/cnl'},{'text':'/mpl'}],[{'text':'/it'},{'text':'/pt'}],['text':'/help']]}
          keyys=json.dumps(key)
          params = {'chat_id': chat_id, 'text': text,'parse_mode':'HTML','reply_markup':keyys}
          method = 'sendMessage'
@@ -155,7 +155,7 @@ def main():
                   new_offset = first_update_id + 1
                  
                 elif first_chat_text == '/start':
-                  niloner_bot.send_message(first_chat_id,m_id, 'Hi '  +'<b><i>' +first_chat_name+'</i></b>'+'\n Type /list for list of commands\n\n\n\nThis bot was created by @Renolin')
+                  niloner_bot.send_message(first_chat_id,m_id, 'Hi '  +'<b><i>' +first_chat_name+'</i></b>'+'\n Type /help for list of commands\n\n\n\nThis bot was created by @Renolin')
                   new_offset = first_update_id + 1
                 
                 else :
@@ -164,7 +164,7 @@ def main():
                     flag=0
                     niloner_bot.send_message(first_chat_id,m_id, table())
                     new_offset = first_update_id + 1
-                  if first_chat_text == '/list':
+                  if first_chat_text == '/help':
                       flag=0
                       niloner_bot.send_button(first_chat_id,m_id, '<b>List of Commands</b>\n\n-- /tt - Time table\n\n-- /now - Current period\n\n-- /next - Next period\n\n-- /toc - Theory of computation\n\n-- /cg- Computer graphics and multimedia\n\n-- /cn - Computer networks\n\n-- /mp - Microprocessor\n\n-- /wt - Web technology\n\n-- /mad - Mobile App\n\n-- /cgl - Computer graphics and multimedia LAB\n\n-- /cnl - Computer networks LAB\n\n-- /mpl - Microprocessor LAB\n\n-- /it - Industrial training\n\n-- /pt - Placement and training\n\n')
                       new_offset = first_update_id + 1
