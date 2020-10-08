@@ -155,7 +155,7 @@ def main():
                        niloner_bot.send_message(first_chat_id,m_id,'<b><i>'+name+'</i></b>'+' was removed by '+'<b><i>'+temp_name+'</i></b>')
                    new_offset = first_update_id + 1
                 elif 'pinned_message' in current_update['message']:
-                        niloner_bot.send_message(first_chat_id,m_id,' pinned a message\n')
+                        niloner_bot.send_message(first_chat_id,m_id,' pinned a message')
                         new_offset = first_update_id + 1
 
                 elif first_chat_text == 'Hi' or first_chat_text == 'hi':
