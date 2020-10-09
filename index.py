@@ -38,6 +38,14 @@ class BotHandler:
         resp = requests.post(self.api_url + method, params)
         
         return resp
+    def send_help(self,chat_id):
+         text=''Hey! My name is Syntax_error. I am an online class link management bot, here to help you get the class links and time table! PM me on @niloner_bot\n\nFor further queries use the buttons below.\n\n\nThis bot was created by @Renolin''
+         key={'inline_keyboard':[[{'text': 'Notification','callback_data':'1'}],[{'text': 'Current class','callback_data': '2'},{'text': 'Next class','callback_data':'3'}],[{'text': 'Theory classes','callback_data': '4'}],[{'text': 'Lab classes','callback_data':'5'}],[{'text': 'Seminar classes','callback_data': '6'}],[{'text': 'Source code','url':'www.google.com'}]]}
+         keyys=json.dumps(key)
+         params = {'chat_id': chat_id, 'text': text,'parse_mode':'HTML','reply_markup':keyys}
+         method = 'sendMessage'
+         resp = requests.post(self.api_url + method, params)
+         return resp
     def send_message(self, chat_id,m_id,text):
         t_day=d()
         u=random.randint(0,16)
@@ -57,6 +65,28 @@ class BotHandler:
         resp = requests.post(self.api_url + method, params)
         
         return resp
+    def callbackquery(self,chat_id,m_id,data):
+      params={'chat_id': chat_id,'message_id': m_id}
+      met='editMessagetext'
+      if data=='1':
+        print('notifying')
+        par=notifying(chat_id,m_id)
+      elif data=='2' or data=='3':
+        par=nextnow(chat_id,m_id,data)
+      elif data=='4':
+        par=subquery(chat_id,m_id)
+      elif data=='5':
+        par=labquery(chat_id,m_id)
+      elif data=='toc' or data=='cg' or data=='cn' or data=='mp' or data=='wt' or data=='mad' or data=='it' or data=='pt':
+        par=subject(chat_id,m_id,data)
+      elif data=='cgl' or data=='cnl' or data=='mpl':
+        par=labsub(chat_id,m_id,data)
+      elif data=='6':
+        par=seminar(chat_id,m_id)
+      elif data=='0':
+        par=noti(chat_id,m_id)
+      responses=requests.post(self.api_url + met, par)
+      return responses
     def send_pinned(self, chat_id,m_id,text):
         met='sendchataction'
         para={'chat_id':chat_id ,'action' : 'typing'}
@@ -116,10 +146,20 @@ def main():
         all_updates=niloner_bot.get_updates(new_offset)
        
         if len(all_updates) > 0:
-            for current_update in all_updates:
-                print(current_update)
-                first_update_id = current_update['update_id']
-                
+           for current_update in all_updates:
+              print(current_update)
+              first_update_id = current_update['update_id']
+              if 'callback_query' in current_update :
+                  print('call_back')
+                  first_update_id = current_update['update_id']
+                  if 'data' in current_update['callback_query']:
+                    data_r=current_update['callback_query']['data']
+                  m_id=current_update['callback_query']['message']['message_id']
+                  chat_id=current_update['callback_query']['message']['chat']['id']
+                  niloner_bot.callbackquery(chat_id,m_id,data_r)
+                  new_offset=first_update_id+1
+                  print(data_r,chat_id,m_id)
+              elif 'message' in current_update :
                 m_id = current_update['message']['message_id']
                 if 'text' not in current_update['message'] :
                     first_chat_text='New member'
@@ -178,7 +218,7 @@ def main():
                     new_offset = first_update_id + 1
                   if first_chat_text == '/help':
                       flag=0
-                      niloner_bot.send_button(first_chat_id,m_id, '<b>List of Commands</b>\n\n-- /tt - Time table\n\n-- /now - Current period\n\n-- /next - Next period\n\n-- /toc - Theory of computation\n\n-- /cg- Computer graphics and multimedia\n\n-- /cn - Computer networks\n\n-- /mp - Microprocessor\n\n-- /wt - Web technology\n\n-- /mad - Mobile App\n\n-- /cgl - Computer graphics and multimedia LAB\n\n-- /cnl - Computer networks LAB\n\n-- /mpl - Microprocessor LAB\n\n-- /it - Industrial training\n\n-- /pt - Placement and training\n\n')
+                      niloner_bot.send_help(first_chat_id)
                       new_offset = first_update_id + 1
                   if first_chat_text == '/now':
                         flag=0
