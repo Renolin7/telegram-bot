@@ -2,14 +2,14 @@
 ![Build Status](https://miro.medium.com/max/100/1*YVTFl1UEkt3_rkez-DIU9w.png)
 Bots are third-party applications that run inside Telegram. Users can interact with bots by sending them messages, commands and inline requests. You control your bots using HTTPS requests to our Bot API.
 ##  What can this bot do?
-> This bot was created to manage online class meet links.
+ This bot was created to manage online class meet links.
 ## New features !
 - Added inline buttons to make queries easier.
 - Added inline keyboard buttons for faster replies.
 ## Installation
 > This bot is created using python.
 
-###### Installation on termux
+#### Installation on termux
 
 Installing required packages
 
@@ -34,7 +34,7 @@ Hosting the bot (requires internet)
 $ cd /path/to/repo
 $ python index.py
 ```
-##### Installation on windows PC
+#### Installation on windows PC
 - Clone the repo into your PC.
 - You can run on any python IDE or editor.
 - Run the index.py file (requires internet)
