@@ -97,7 +97,7 @@ def labquery(ch_id,m_id):
   return params
   
 def nextnow(ch_id,m_id,data):
-  #key=json.dumps({'inline_keyboard':[[{'text':'Go back','callback_data':'0'}]]})
+  key=json.dumps({'inline_keyboard':[[{'text':'Go back','callback_data':'0'}]]})
   if data=='2':
     text=check()
     if 'no class scheduled' in text.lower() or 'holiday' in text.lower() or 'link not updated' in text.lower():
