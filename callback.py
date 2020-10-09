@@ -153,7 +153,7 @@ def nextnow(ch_id,m_id,data):
   params={'chat_id':ch_id,'message_id':m_id,'text':text,'reply_markup':key,'parse_mode':'HTML'}
   return params
 def noti(ch_id,m_id):
-  key=json.dumps({'inline_keyboard':[[{'text': 'Notification','callback_data':'1'}],[{'text': 'Current class','callback_data': '2'},{'text': 'Next class','callback_data':'3'}],[{'text': 'Theory classes','callback_data': '4'}],[{'text': 'Lab classes','callback_data':'5'}],[{'text': 'Seminar classes','callback_data': '6'}],[{'text': 'Source code','url':'www.google.com'}]]})
+  key=json.dumps({'inline_keyboard':[[{'text': 'Notification','callback_data':'1'}],[{'text': 'Current class','callback_data': '2'},{'text': 'Next class','callback_data':'3'}],[{'text': 'Theory classes','callback_data': '4'}],[{'text': 'Lab classes','callback_data':'5'}],[{'text': 'Seminar classes','callback_data': '6'}],[{'text': 'Source code','url':'https://github.com/Renolin7/telegram-bot'}]]})
  
   tex='Hey! My name is Syntax_error. I am an online class link management bot, here to help you get the class links and time table! PM me on @niloner_bot\n\nFor further queries use the buttons below.\n\n\nThis bot was created by @Renolin'
   params={'chat_id':ch_id,'message_id':m_id,'text':tex,'reply_markup':key,'parse_mode':'HTML'}
