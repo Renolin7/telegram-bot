@@ -11,7 +11,7 @@ def notifying(ch_id,m_id):
   params={'chat_id':ch_id,'message_id':m_id,'message_id':m_id,'text':'<b>NOTIFICATION\n\n</b>'+notification(),'reply_markup':key,'parse_mode':'HTML'}
   return params
 def subject(ch_id,m_id,data):
-  #key=json.dumps({'inline_keyboard':[[{'text':'Go back','callback_data':'4'}]]})
+  key=json.dumps({'inline_keyboard':[[{'text':'Go back','callback_data':'4'}]]})
   #text=' '
   #key = None
   if data == 'toc':
@@ -100,7 +100,7 @@ def nextnow(ch_id,m_id,data):
   key=json.dumps({'inline_keyboard':[[{'text':'Go back','callback_data':'0'}]]})
   if data=='2':
     text=check()
-    if 'no class scheduled' in text.lower() or 'holiday' in text.lower() or 'link not updated' in text.lower() or 'break' in text.lower() or 'offline class' in text.lower() :
+    if 'no class scheduled' in text.lower() or 'holiday' in text.lower() or 'link not updated' in text.lower() or 'break' in text.lower() or 'offline' in text.lower() :
       key=json.dumps({'inline_keyboard':[[{'text':'Go back','callback_data':'0'}]]})
     elif 'theory of computation' in text.lower():
       key=json.dumps({'inline_keyboard':[[{'text':'Join class','url':toc()}],[{'text':'Go back','callback_data':'0'}]]})
@@ -126,7 +126,7 @@ def nextnow(ch_id,m_id,data):
       key=json.dumps({'inline_keyboard':[[{'text':'Join class','url':pt()}],[{'text':'Go back','callback_data':'0'}]]})
   elif data=='3':
     text=nextcl()
-    if 'no classes scheduled' in text.lower() or 'holiday' in text.lower() or 'link not updated' in text.lower() or 'break' in text.lower() or 'offline class' in text.lower() :
+    if 'no classes scheduled' in text.lower() or 'holiday' in text.lower() or 'link not updated' in text.lower() or 'break' in text.lower() or 'offline' in text.lower() :
       key=json.dumps({'inline_keyboard':[[{'text':'Go back','callback_data':'0'}]]})
     elif 'theory of computation' in text.lower():
       key=json.dumps({'inline_keyboard':[[{'text':'Join class','url':toc()}],[{'text':'Go back','callback_data':'0'}]]})
