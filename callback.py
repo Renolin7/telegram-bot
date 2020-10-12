@@ -128,6 +128,13 @@ def nextnow(ch_id,m_id,data):
     text=nextcl()
     if 'no classes scheduled' in text.lower() or 'holiday' in text.lower() or 'link not updated' in text.lower() or 'break' in text.lower() or 'offline' in text.lower() :
       key=json.dumps({'inline_keyboard':[[{'text':'Go back','callback_data':'0'}]]})
+    elif 'computer graphics and multimedia lab' in text.lower() :
+       key=json.dumps({'inline_keyboard':[[{'text':'Join class','url':cglab()}],[{'text':'Go back','callback_data':'0'}]]})
+    elif 'computer networks lab' in text.lower() :
+       key=json.dumps({'inline_keyboard':[[{'text':'Join class','url':cnlab()}],[{'text':'Go back','callback_data':'0'}]]})
+    elif 'microprocessor lab' in text.lower() :
+       key=json.dumps({'inline_keyboard':[[{'text':'Join class','url':mplab()}],[{'text':'Go back','callback_data':'0'}]]})
+   
     elif 'theory of computation' in text.lower():
       key=json.dumps({'inline_keyboard':[[{'text':'Join class','url':toc()}],[{'text':'Go back','callback_data':'0'}]]})
     elif 'web technology' in text.lower():
