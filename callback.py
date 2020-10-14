@@ -12,7 +12,7 @@ def notifying(ch_id,m_id):
   return params
 def subject(ch_id,m_id,data):
   key=json.dumps({'inline_keyboard':[[{'text':'Go back','callback_data':'4'}]]})
-  #text=' '
+  text=' '
   #key = None
   if data == 'toc':
     
