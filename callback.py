@@ -40,7 +40,7 @@ def subject(ch_id,m_id,data):
     if 'todays classes are over' in mp().lower() or 'holiday' in mp().lower() or 'link not updated' in mp().lower() or 'offline class' in mp().lower() or 'today no class' in mp().lower():
       key=json.dumps({'inline_keyboard':[[{'text':'Go back','callback_data':'4'}]]})
     else:
-      key=json.dumps({'inline_keyboard':[[{'text':'Join class','url':cg()}],[{'text':'Go back','callback_data':'4'}]]})
+      key=json.dumps({'inline_keyboard':[[{'text':'Join class','url':mp()}],[{'text':'Go back','callback_data':'4'}]]})
   elif data == 'wt':
     text='<b><u>Web technology\n\n</u></b>'+wt()
     if 'todays classes are over' in wt().lower() or 'holiday' in wt().lower() or 'link not updated' in wt().lower() or 'offline class' in wt().lower() or 'today no class' in wt().lower():
