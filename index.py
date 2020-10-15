@@ -138,16 +138,7 @@ class BotHandler:
 token = environ['token']
 niloner_bot = BotHandler(token)
 ID= [750862502,817947468]
-schedule.every().day.at("08:57").do(niloner_bot.send_message,-440030144,nextcl())
-schedule.every().day.at("09:57").do(niloner_bot.send_message,-440030144,nextcl())
-schedule.every().day.at("10:57").do(niloner_bot.send_message,-440030144,nextcl())
-schedule.every().day.at("11:27").do(niloner_bot.send_message,-440030144,nextcl())
-schedule.every().day.at("12:27").do(niloner_bot.send_message,-440030144,nextcl())
-schedule.every().day.at("13:27").do(niloner_bot.send_message,-440030144,nextcl())
-schedule.every().day.at("14:27").do(niloner_bot.send_message,-440030144,nextcl())
-schedule.every().day.at("15:27").do(niloner_bot.send_message,-440030144,nextcl())
-schedule.every().day.at("16:27").do(niloner_bot.send_message,-440030144,nextcl())
-schedule.every().day.at("17:30").do(niloner_bot.send_message,-440030144, 'Todays classes are over')
+
 def main():
     new_offset = 0
     print('Launching the bot...')
@@ -155,7 +146,7 @@ def main():
     while True:
         
         all_updates=niloner_bot.get_updates(new_offset)
-        schedule.run_pending()
+        
         if len(all_updates) > 0:
            for current_update in all_updates:
               print(current_update)
