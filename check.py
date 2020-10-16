@@ -2,7 +2,7 @@
 from Time import *
 from links import *
 sp="____________________________"
-notify=[' ']
+notify=['The last date to pay the Tution Fees for <b><i>2020-21</i></b> with fine - From <b><i>16.10.2020</i></b> to <b><i>30.10.2020</i><b> payment of tuition fee with a fine of <b>Rs <i>500</i>/-</b>']
 def notification():
    return(notify[0])
 def change_notify(h):
