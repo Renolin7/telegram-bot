@@ -59,7 +59,7 @@ def nextcl():
   elif t>='15:30:00' and t<'16:30:00' and ( d=='Fri'or (c[0]=='1' and c[1]=='5') ):
     return('No classes scheduled next !')
   elif t>='15:30:00' and t<'16:30:00' :
-    return('Next ->\n'+y[8])
+    return('Next ->\n'+y[0])
   else:
     return('No classes scheduled next !')
 
