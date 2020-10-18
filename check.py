@@ -59,7 +59,7 @@ def nextcl():
   elif t>='15:30:00' and t<'16:30:00' and ( d=='Fri'or (c[0]=='1' and c[1]=='5') ):
     return('No classes scheduled next !')
   elif t>='15:30:00' and t<'16:30:00' :
-    return('Next ->\n'+y[0])
+    return('Next ->\n'+y[8])
   else:
     return('No classes scheduled next !')
 
@@ -106,4 +106,4 @@ def table():
   elif k <= '23:59:59' and k >= '17:30:00':
     return('Todays classes are over !')
   else :
-    return("09:00 - 10:00   "+g[0]+"\n\n10:00 - 11:00   "+g[1]+"\n\n11:00 - 11:30   "+g[2]+"\n\n11:30 - 12:30   "+g[3]+"\n\n12:30 - 01:30   "+g[4]+"\n\n01:30 - 02:30   "+g[5]+"\n\n02:30 - 03:30   "+g[6]+"\n\n03:30 - 04:30   "+g[7]+"\n\n04:30 - 05:30   "+g[0])
+    return("09:00 - 10:00   "+g[0]+"\n\n10:00 - 11:00   "+g[1]+"\n\n11:00 - 11:30   "+g[2]+"\n\n11:30 - 12:30   "+g[3]+"\n\n12:30 - 01:30   "+g[4]+"\n\n01:30 - 02:30   "+g[5]+"\n\n02:30 - 03:30   "+g[6]+"\n\n03:30 - 04:30   "+g[7]+"\n\n04:30 - 05:30   "+g[8])
